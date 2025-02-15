@@ -1,5 +1,5 @@
-
-
+import { TbCurrentLocation } from "react-icons/tb";
+import { FaSackDollar } from "react-icons/fa6";
 const Job = ({job}) => {
     const {logo,job_title,company_name,remote_or_onsite,location,
         job_type,salary,job_description,job_responsibility,
@@ -8,8 +8,8 @@ const Job = ({job}) => {
         <div className="card card-compact bg-base-100 w-96 shadow-xl">
   <figure>
     <img
-      src="logo"
-      alt="Shoes" />
+      src={logo}
+      alt="" />
   </figure>
   <div className="card-body">
     <h2 className="card-title">{job_title}</h2>
@@ -17,6 +17,10 @@ const Job = ({job}) => {
     <div >
         <button className="px-5 py-2 font-extrabold border rounded border-[#7e90fe] mr-4">{remote_or_onsite}</button>
         <button className="px-5 py-2 font-extrabold border rounded border-[#7e90fe] ml-4">{job_type}</button>
+    </div>
+    <div className="mt-4 flex mr-4">
+        <h2 className="flex mr-2"><TbCurrentLocation className="text-2xl"></TbCurrentLocation>{location}</h2>
+        <h2 className="flex"><FaSackDollar className="text-2xl"></FaSackDollar>{salary}</h2>
     </div>
     <div className="card-actions">
       <button className="btn btn-primary">View Details</button>
