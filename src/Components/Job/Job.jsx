@@ -1,7 +1,8 @@
 import { TbCurrentLocation } from "react-icons/tb";
 import { FaSackDollar } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 const Job = ({job}) => {
-    const {logo,job_title,company_name,remote_or_onsite,location,
+    const {id,logo,job_title,company_name,remote_or_onsite,location,
         job_type,salary,job_description,job_responsibility,
         educational_requirements,experiences,contact_information}=job;
     return (
@@ -23,7 +24,9 @@ const Job = ({job}) => {
         <h2 className="flex"><FaSackDollar className="text-2xl"></FaSackDollar>{salary}</h2>
     </div>
     <div className="card-actions">
+      <Link to={`/job/${id}`}>
       <button className="btn btn-primary">View Details</button>
+      </Link>
     </div>
   </div>
 </div>
